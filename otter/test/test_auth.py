@@ -309,7 +309,7 @@ class HelperTests(SynchronousTestCase):
         self.assertEqual(self.successResultOf(d), 'ausername')
 
         self.treq.get.assert_called_once_with(
-            'http://identity/v2.0/users?tenant_id=111111&&admin_only=true',
+            'http://identity/v2.0/users?tenant_id=111111&admin_only=true',
             headers=headers('auth-token'),
             allow_redirects=False, log=self.log)
 
