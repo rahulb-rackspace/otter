@@ -534,6 +534,7 @@ class CassScalingGroupTests(CassScalingGroupTestCase):
         """
         Test that you can call view state and receive a valid parsed response
         """
+        # raise Exception("right here rahul")
         self.returns = [[
             merge(scaling_group_entry,
                   {'tenantId': self.tenant_id,

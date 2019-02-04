@@ -382,7 +382,8 @@ def user_for_tenant(auth_endpoint, token, tenant_id, log=None):
     :return: Username of the magical identity:user-admin user for the tenantid.
     """
     d = treq.get(
-        append_segments(auth_endpoint, 'users')+'?tenant_id='+str(tenant_id)+'&admin_only=true',
+        append_segments(auth_endpoint, 'users')+'?tenant_id=' +
+        str(tenant_id)+'&admin_only=true',
         headers=headers(token),
         allow_redirects=False,
         log=log)

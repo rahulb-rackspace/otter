@@ -509,13 +509,16 @@ class ImpersonatingAuthenticatorTests(SynchronousTestCase):
         endpoint.
         """
         self.successResultOf(self.ia.authenticate_tenant(111111))
-        self.user_for_tenant.assert_called_once_with(self.admin_url, None, 111111,
+        self.user_for_tenant.assert_called_once_with(self.admin_url,
+                                                     None,
+                                                     111111,
                                                      log=None)
         self.user_for_tenant.reset_mock()
 
         self.successResultOf(self.ia.authenticate_tenant(111111, log=self.log))
 
-        self.user_for_tenant.assert_called_once_with(self.admin_url, None, 111111,
+        self.user_for_tenant.assert_called_once_with(self.admin_url,
+                                                     None, 111111,
                                                      log=self.log)
 
     def test_authenticate_tenant_impersonates_first_user(self):
